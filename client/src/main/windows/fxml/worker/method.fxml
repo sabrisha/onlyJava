@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="598.0" style="-fx-background-color: #FFDAB9#FFDAB9;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.worker.MethodController">
+   <children>
+      <GridPane fx:id="secondGrid" alignment="CENTER" layoutX="85.0" layoutY="300.0" prefHeight="202.0" prefWidth="477.0" scaleShape="false">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="56.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="142.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.0" minWidth="10.0" prefWidth="130.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="136.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints />
+          <RowConstraints />
+          <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Spinner fx:id="eb11" prefHeight="25.0" prefWidth="99.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Spinner fx:id="eb12" prefHeight="25.0" prefWidth="99.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Spinner fx:id="eb13" prefHeight="25.0" prefWidth="99.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Spinner fx:id="eb23" prefHeight="25.0" prefWidth="99.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Spinner fx:id="eb22" prefHeight="25.0" prefWidth="99.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Spinner fx:id="eb21" prefHeight="25.0" prefWidth="99.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Spinner fx:id="eb32" prefHeight="25.0" prefWidth="99.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Spinner fx:id="eb31" prefHeight="25.0" prefWidth="99.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Spinner fx:id="eb33" prefHeight="25.0" prefWidth="99.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Эксперт 1" GridPane.rowIndex="6" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Эксперт 2" GridPane.rowIndex="7" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Эксперт 3" GridPane.rowIndex="8" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Деталь 1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Деталь 2" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Деталь 3" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Button mnemonicParsing="false" onAction="#calculate" prefHeight="25.0" prefWidth="99.0" style="-fx-background-color: #9ACD32#9ACD32; -fx-background-radius: 10;" text="Рассчитать" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+         </children>
+      </GridPane>
+      <Label fx:id="firstDetailInfo" layoutX="14.0" layoutY="14.0" text="Первая деталь" />
+      <Label fx:id="secondDetailInfo" layoutX="14.0" layoutY="43.0" text="Вторая деталь" />
+      <Label fx:id="thirdDetailInfo" layoutX="14.0" layoutY="71.0" text="Третья деталь" />
+      <GridPane fx:id="firstGrid" layoutX="78.0" layoutY="111.0" prefHeight="150.0" prefWidth="490.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="50.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="277.0" minWidth="10.0" prefWidth="197.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="211.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Эксперт 1" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Эксперт 2" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Эксперт 3" GridPane.rowIndex="3" />
+            <ComboBox fx:id="firstPosition" prefWidth="150.0" style="-fx-background-color: #D8BFD8#D8BFD8;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="secondPosition" prefWidth="150.0" style="-fx-background-color: #D8BFD8#D8BFD8;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="thirdPosition" prefWidth="150.0" style="-fx-background-color: #D8BFD8#D8BFD8;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="firstDegree" prefWidth="150.0" style="-fx-background-color: #D8BFD8#D8BFD8;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <ComboBox fx:id="secondDegree" prefWidth="150.0" style="-fx-background-color: #D8BFD8#D8BFD8;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <ComboBox fx:id="thirdDegree" prefWidth="150.0" style="-fx-background-color: #D8BFD8#D8BFD8;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="Должность" GridPane.columnIndex="1" />
+            <Label text="Степень" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" onAction="#accept" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #9ACD32#9ACD32; -fx-background-radius: 10;" text="Принять" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="thirdGrid" layoutX="124.0" layoutY="536.0" prefHeight="120.0" prefWidth="399.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="120.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="114.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="60.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="214.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="firstDetailBall" editable="false" GridPane.columnIndex="1" />
+            <TextField fx:id="secondDetailBall" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="thirdDetailBall" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Деталь 1" />
+            <Label text="Деталь 2" GridPane.rowIndex="1" />
+            <Label text="Деталь 3" GridPane.rowIndex="2" />
+            <Spinner fx:id="price" GridPane.columnIndex="3" />
+            <Button mnemonicParsing="false" onAction="#acceptOrder" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #FFC0CB#FFC0CB; -fx-background-radius: 10;" text="Принять заказ" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #FF69B4#FF69B4; -fx-background-radius: 10;" text="Сохранить анализ" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

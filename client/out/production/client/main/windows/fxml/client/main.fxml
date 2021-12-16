@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="820.0" style="-fx-background-color: #FFEFD5#FFEFD5;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.client.MainController">
+   <children>
+      <Accordion layoutX="10.0" layoutY="50.0" prefHeight="600.0" prefWidth="800.0">
+        <panes>
+          <TitledPane fx:id="carPane" style="-fx-background-color: #FFFACD#FFFACD;" text="Машины">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFFACD#FFFACD;">
+                     <children>
+                        <TableView fx:id="carsTable" layoutX="10.0" layoutY="10.0" prefHeight="270.0" prefWidth="780.0" style="-fx-background-color: #FFFACD#FFFACD;">
+                          <columns>
+                            <TableColumn fx:id="carBrandColumn" prefWidth="195.0" resizable="false" text="Марка машины" />
+                            <TableColumn fx:id="stateNumberColumn" prefWidth="195.0" resizable="false" text="Регистрационный номер" />
+                              <TableColumn fx:id="issueYearColumn" prefWidth="195.0" resizable="false" text="Год выпуска" />
+                              <TableColumn fx:id="mileageColumn" prefWidth="195.0" resizable="false" text="Пробег" />
+                          </columns>
+                        </TableView>
+                        <TitledPane animated="false" collapsible="false" layoutX="10.0" layoutY="290.0" prefHeight="210.0" prefWidth="250.0" style="-fx-background-color: #F4A460#F4A460;" text="Добавить">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFE4B5#FFE4B5;">
+                                 <children>
+                                    <TextField fx:id="addCarBrand" layoutX="5.0" layoutY="5.0" prefHeight="25.0" prefWidth="240.0" promptText="Марка машины" style="-fx-background-radius: 10;" />
+                                    <TextField fx:id="addStateNumber" layoutX="5.0" layoutY="35.0" prefWidth="240.0" promptText="Регистрационный номер" style="-fx-background-radius: 10;" />
+                                    <ComboBox fx:id="addIssueYear" layoutX="5.0" layoutY="65.0" prefWidth="240.0" promptText="Год выпуска" style="-fx-background-color: #B0C4DE#B0C4DE; -fx-background-radius: 10;" />
+                                    <Spinner fx:id="addMileage" layoutX="55.0" layoutY="95.0" prefHeight="25.0" prefWidth="190.0" style="-fx-background-radius: 10;" />
+                                    <Text layoutX="5.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пробег:" />
+                                    <Button layoutX="5.0" layoutY="125.0" mnemonicParsing="false" onAction="#saveCar" prefWidth="240.0" style="-fx-background-color: #9ACD32#9ACD32; -fx-background-radius: 10;" text="Сохранить" />
+                                    <Button layoutX="5.0" layoutY="155.0" mnemonicParsing="false" onAction="#clearAddPane" prefWidth="240.0" style="-fx-background-color: #FFD700#FFD700; -fx-background-radius: 10;" text="Очистить" />
+                                 </children></AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" layoutX="274.0" layoutY="290.0" prefHeight="210.0" prefWidth="250.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFEFD5#FFEFD5;">
+                                 <children>
+                                    <TextField fx:id="editCarBrand" layoutX="5.0" layoutY="5.0" prefHeight="25.0" prefWidth="240.0" promptText="Марка машины" style="-fx-background-radius: 10;" />
+                                    <TextField fx:id="editStateNumber" layoutX="5.0" layoutY="35.0" prefWidth="240.0" promptText="Регистрационный номер" style="-fx-background-radius: 10;" />
+                                    <ComboBox fx:id="editIssueYear" layoutX="5.0" layoutY="65.0" prefWidth="240.0" promptText="Год выпуска" style="-fx-background-color: #B0C4DE#B0C4DE; -fx-background-radius: 10;" />
+                                    <Spinner fx:id="editMileage" layoutX="55.0" layoutY="95.0" prefHeight="25.0" prefWidth="190.0" />
+                                    <Text layoutX="5.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пробег:" />
+                                    <Button layoutX="5.0" layoutY="125.0" mnemonicParsing="false" onAction="#updateCar" prefWidth="240.0" style="-fx-background-color: #9ACD32#9ACD32; -fx-background-radius: 10;" text="Сохранить" />
+                                    <Button layoutX="5.0" layoutY="155.0" mnemonicParsing="false" onAction="#clearEditPane" prefWidth="240.0" style="-fx-background-color: #FFD700#FFD700; -fx-background-radius: 10;" text="Очистить" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" layoutX="540.0" layoutY="290.0" prefHeight="210.0" prefWidth="250.0" text="Оставить заявку">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFEFD5#FFEFD5;">
+                                 <children>
+                                    <ComboBox fx:id="areaComboBox" layoutX="5.0" layoutY="5.0" prefWidth="240.0" promptText="Неисправность" style="-fx-background-color: #FFA07A#FFA07A; -fx-background-radius: 10;" />
+                                    <Button layoutX="5.0" layoutY="125.0" mnemonicParsing="false" onAction="#addBacking" prefWidth="240.0" style="-fx-background-color: #9ACD32#9ACD32; -fx-background-radius: 10;" text="Сохранить" />
+                                    <Button layoutX="5.0" layoutY="155.0" mnemonicParsing="false" onAction="#clearBackingPane" prefWidth="240.0" style="-fx-background-color: #FFD700#FFD700; -fx-background-radius: 10;" text="Отмена" />
+                                    <TextArea fx:id="commentTextField" layoutX="5.0" layoutY="35.0" prefHeight="85.0" prefWidth="240.0" promptText="Описание проблемы" style="-fx-background-radius: 10; -fx-border-radius: 10;" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <Button layoutX="540.0" layoutY="510.0" mnemonicParsing="false" onAction="#deleteCar" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #800000#800000; -fx-background-radius: 10;" text="Удалить" textFill="ALICEBLUE" />
+                        <Button alignment="TOP_LEFT" layoutX="274.0" layoutY="290.0" mnemonicParsing="false" onAction="#selectCarForUpdate" prefHeight="25.0" prefWidth="250.0" text="Редактировать" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane fx:id="requestsPane" text="Заказы">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFFACD#FFFACD;">
+                     <children>
+                        <TableView fx:id="backingTable" layoutX="10.0" layoutY="10.0" onMouseClicked="#getBackingInfo" prefHeight="270.0" prefWidth="780.0" style="-fx-background-color: #FFFACD#FFFACD;">
+                          <columns>
+                            <TableColumn fx:id="backingCarId" prefWidth="100.0" resizable="false" text="ID автомобиля" />
+                            <TableColumn fx:id="backingArea" prefWidth="100.0" text="Неисправность" />
+                              <TableColumn fx:id="backingPrice" prefWidth="100.0" resizable="false" text="Цена ремонта" />
+                              <TableColumn fx:id="backingStatus" prefWidth="100.0" text="Статус" />
+                              <TableColumn fx:id="backingWorkerId" prefWidth="100.0" resizable="false" text="ID мастера" />
+                              <TableColumn fx:id="backingRequestDate" prefWidth="100.0" text="Дата заявки" />
+                              <TableColumn fx:id="backingComment" prefWidth="180.0" resizable="false" text="Комментарии" />
+                          </columns>
+                        </TableView>
+                        <TitledPane animated="false" collapsible="false" layoutX="10.0" layoutY="300.0" prefHeight="240.0" prefWidth="240.0" text="Машина">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFE4B5#FFE4B5;">
+                                 <children>
+                                    <TextField fx:id="viewCarBrand" editable="false" layoutX="10.0" layoutY="15.0" prefHeight="25.0" prefWidth="220.0" promptText="Марка автомобиля" style="-fx-background-radius: 10;" />
+                                    <TextField fx:id="viewCarNumber" editable="false" layoutX="10.0" layoutY="55.0" prefWidth="220.0" promptText="Номер" style="-fx-background-radius: 10;" />
+                                    <TextField fx:id="viewCarIssueYear" editable="false" layoutX="10.0" layoutY="95.0" prefWidth="220.0" promptText="Год выпуска" style="-fx-background-radius: 10;" />
+                                    <TextField fx:id="viewCarMileage" editable="false" layoutX="10.0" layoutY="135.0" prefWidth="220.0" promptText="Пробег" style="-fx-background-radius: 10;" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" layoutX="280.0" layoutY="300.0" prefHeight="240.0" prefWidth="240.0" text="Мастер">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFEFD5#FFEFD5;">
+                                 <children>
+                                    <TextField fx:id="viewWorkerFullName" editable="false" layoutX="10.0" layoutY="15.0" prefWidth="220.0" promptText="ФИО" style="-fx-background-radius: 10;" />
+                                    <TextField fx:id="viewWorkerSpecialty" editable="false" layoutX="10.0" layoutY="55.0" prefWidth="220.0" promptText="Специальность" style="-fx-background-radius: 10;" />
+                                    <TextField fx:id="viewWorkerArea" editable="false" layoutX="10.0" layoutY="95.0" prefWidth="220.0" promptText="Область работ" style="-fx-background-radius: 10;" />
+                                    <TextField fx:id="viewWorkerExperience" editable="false" layoutX="10.0" layoutY="135.0" prefWidth="220.0" promptText="Опыт" style="-fx-background-radius: 10;" />
+                                    <TextField fx:id="viewWorkerTelephone" editable="false" layoutX="10.0" layoutY="175.0" prefWidth="220.0" promptText="Номер телефона" style="-fx-background-radius: 10;" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <Button layoutX="550.0" layoutY="300.0" mnemonicParsing="false" onAction="#closeBacking" prefHeight="25.0" prefWidth="240.0" style="-fx-background-color: #800000#800000; -fx-background-radius: 10;" text="Отменить заказ" textFill="ALICEBLUE" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <Label fx:id="clientFullName" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="283.0" text="Иванов Иван Иванович">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="exitButton" layoutX="758.0" layoutY="13.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-radius: 10;" text="Выход" />
+   </children>
+</AnchorPane>
